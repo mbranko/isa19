@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.28'
+    compile group: 'com.sparkjava', name: 'spark-core', version: '2.9.1'
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    mainClassName = 'pr03.App'
+}
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}

@@ -1,20 +1,18 @@
-package pr02;
+package pr03;
 
+import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.util.List;
 
 import spark.*;
 import static spark.Spark.*;
 
-import pr02.messages.OceneProtos.Ocena;
-import pr02.messages.OceneProtos.Ocene;
-import pr02.messages.OceneProtos.Predmet;
-import pr02.messages.OceneProtos.Predmeti;
-import pr02.messages.OceneProtos.Student;
-import pr02.messages.OceneProtos.Studenti;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import pr03.model.*;
 
 public class App {
-
   public static void main(String[] args) {
     notFound((req, res) -> "{ \"error\": \"404 Not Found\"}");
     internalServerError((req, res) -> "{ \"error\": \"500 Internal Server Error\"}");
@@ -54,24 +52,16 @@ public class App {
       return "";
     }
     response.status(200);
-    response.type("application/x-protobuf; messageType=\"pr02.messages.Student\"");
-    try {
-      s.writeTo(response.raw().getOutputStream());
-    } catch (IOException ex) {
-      ex.printStackTrace();
-    }
+    response.type("application/x-java-object; type=pr03.model.Student");
+    write(s, response);
     return "";
   }
 
   public static String getStudenti(Request request, Response response) {
-    Studenti s = DemoFactory.getStudenti();
+    List<Student> s = DemoFactory.getStudenti();
     response.status(200);
-    response.type("application/x-protobuf; messageType=\"pr02.messages.Studenti\"");
-    try {
-      s.writeTo(response.raw().getOutputStream());
-    } catch (IOException ex) {
-      ex.printStackTrace();
-    }
+    response.type("application/x-java-object; type=java.util.List");
+    write(s, response);
     return "";
   }
 
@@ -84,24 +74,26 @@ public class App {
       return "";
     }
     response.status(200);
-    response.type("application/x-protobuf; messageType=\"pr02.messages.Ocena\"");
-    try {
-      o.writeTo(response.raw().getOutputStream());
-    } catch (IOException ex) {
-      ex.printStackTrace();
-    }
+    response.type("application/x-java-object; type=pr03.model.Ocena");
+    write(o, response);
     return "";
   }
 
   public static String getOcene(Request request, Response response) {
-    Ocene ocene = DemoFactory.getOcene();
+    List<Ocena> ocene = DemoFactory.getOcene();
     response.status(200);
-    response.type("application/x-protobuf; messageType=\"pr02.messages.Ocene\"");
+    response.type("application/x-java-object; type=java.util.List");
+    write(ocene, response);
+    return "";
+  }
+
+  private static void write(Object obj, Response response) {
     try {
-      ocene.writeTo(response.raw().getOutputStream());
+      ObjectOutputStream out = new ObjectOutputStream(response.raw().getOutputStream());
+      out.writeObject(obj);
     } catch (IOException ex) {
       ex.printStackTrace();
     }
-    return "";
   }
+
 }

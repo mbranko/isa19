@@ -1,12 +1,11 @@
-# Serijalizacija: Protocol Buffers
+# Serijalizacija: Java 
 
 Ovaj primer ilustruje mogućnosti prilikom serijalizacije objekata pomoću
-Protocol Buffers formata.
+ugrađenog JVM mehanizma za serijalizaciju.
 
 ## Potrebne stvari
 
 * [Gradle](https://gradle.org)
-* [Protocol Buffers Compiler](https://github.com/protocolbuffers/protobuf)
 
 ## Korisne stvari
 
@@ -36,11 +35,10 @@ Iz osnovnog foldera pokrenuti
 
 U Postmanu poslati sledeće GET zahteve:
 
- * Protobuf serijalizacija
-   * Podaci o jednom studentu
+ * Java serijalizacija grafa objekata
+   * Podaci o studentu
      http://localhost:4567/api/studenti/E1234
    * Podaci o svim studentima
      http://localhost:4567/api/studenti
    * Podaci o jednoj oceni
      http://localhost:4567/api/ocene/1
-
