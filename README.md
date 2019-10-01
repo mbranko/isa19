@@ -4,13 +4,9 @@ Primeri sa predavanja za predmet Internet softverske arhitekture
 
 ## Konstrukcija servera i inverzija kontrole
 
-### Višenitni serveri
+Primer 01: Minimalan višenitni web server - Java
 
-Primer 01: Minimalan web server - Java
-
-### Jednonitni serveri
-
-Primer 02: Minimalan web server - Node.js
+Primer 02: Minimalan jednonitni web server - Node.js
 
 ## Serijalizacija objekata
 

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head></head>
+    <body>
+      <h1>Primer za bean scope</h1>
+      singleton: <span th:text="${singletonBean.count}"></span><br/>
+      prototype: <span th:text="${prototypeBean.count}"></span><br/>
+      request: <span th:text="${requestBean.count}"></span><br/>
+      session: <span th:text="${sessionBean.count}"></span><br/>
+      globalSession: <span th:text="${globalSessionBean.count}"></span><br/>
+      application: <span th:text="${applicationBean.count}"></span>
+    </body>
+</html>
