@@ -57,6 +57,7 @@ public class App {
     if (request.queryParams("format") != null)
       format = request.queryParams("format");
     response.status(200);
+    response.type("application/json");
     switch(format) {
       case "json":
       case "json1":
@@ -74,6 +75,7 @@ public class App {
     if (request.queryParams("format") != null)
       format = request.queryParams("format");
     response.status(200);
+    response.type("application/json");
     switch(format) {
       case "json":
       case "json1":
@@ -97,6 +99,7 @@ public class App {
     if (request.queryParams("format") != null)
       format = request.queryParams("format");
     response.status(200);
+    response.type("application/json");
     switch(format) {
       case "json":
       case "json1":
@@ -114,6 +117,7 @@ public class App {
     if (request.queryParams("format") != null)
       format = request.queryParams("format");
     response.status(200);
+    response.type("application/json");
     switch(format) {
       case "json":
       case "json1":

@@ -1,0 +1,40 @@
+syntax = "proto2";
+
+package pr02;
+
+import "google/protobuf/timestamp.proto";
+
+option java_package = "pr02.messages";
+option java_outer_classname = "OceneProtos";
+
+message Predmet {
+  required string sifra = 1;
+  required string naziv = 2;
+}
+
+message Student {
+  required string indeks = 1;
+  required string ime = 2;
+  required string prezime = 3;
+  repeated Ocena ocene = 4;
+}
+
+message Ocena {
+  required int32 id = 1;
+  required Predmet predmet = 2;
+  required Student student = 3;
+  required int32 ocena = 4;
+  required google.protobuf.Timestamp date = 5;
+}
+
+message Predmeti {
+  repeated Predmet predmeti = 1;
+}
+
+message Studenti {
+  repeated Student studenti = 1;
+}
+
+message Ocene {
+  repeated Ocena ocene = 1;
+}

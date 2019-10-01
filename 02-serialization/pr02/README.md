@@ -1,11 +1,12 @@
-# Serijalizacija: JSON
+# Serijalizacija: Protocol Buffers
 
-Ovaj primer ilustruje različite mogućnosti prilikom serijalizacije objekata
-korišćenjem JSON formata.
+Ovaj primer ilustruje mogućnosti prilikom serijalizacije objekata pomoću
+Protocol Buffers formata.
 
 ## Potrebne stvari
 
 * [Gradle](https://gradle.org)
+* [Protocol Buffers Compiler](https://github.com/protocolbuffers/protobuf)
 
 ## Korisne stvari
 
@@ -35,7 +36,7 @@ Iz osnovnog foldera pokrenuti
 
 U Postmanu poslati sledeće GET zahteve:
 
- * JSON Serijalizacija sa ugnježdavanjem
+ * **TODO** Protobuf serijalizacija sa ugnježdavanjem
    * Podaci o jednom studentu, sa ugnježdenim ocenama i predmetima: 
      http://localhost:4567/api/studenti/E1234?format=json1
    * Podaci o svim studentima, sa ugnježdenim ocenama i predmetima: 
@@ -43,8 +44,9 @@ U Postmanu poslati sledeće GET zahteve:
    * Podaci o jednoj oceni, sa ugnježdenim predmetom i studentom
      http://localhost:4567/api/ocene/1?format=json1
 
-  * JSON Serijalizacija sa referenciranjem
+  * **TODO** Protobuf erijalizacija sa referenciranjem
     * Podaci o oceni, sa referencama na predmet i studenta
       http://localhost:4567/api/ocene/1?format=json2
     * Podaci o svim ocenama, sa referencama na predmet i studenta
       http://localhost:4567/api/ocene?format=json2
+

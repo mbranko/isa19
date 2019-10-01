@@ -14,7 +14,11 @@ Primer 02: Minimalan web server - Node.js
 
 ## Serijalizacija objekata
 
-Primer 01: JSON, Java serijalizacija, Protocol Buffers
+Primer 01: Serijalizacija pomoću JSON
+
+Primer 02: Serijalizacija pomoću Protocol Buffers
+
+Primer 03: Java serijalizacija
 
 ## Bean scope, dependency injection
 
