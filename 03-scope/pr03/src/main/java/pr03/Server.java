@@ -1,4 +1,4 @@
-package pr01;
+package pr03;
 
 import org.apache.openejb.OpenEjbContainer;
 import org.apache.openejb.core.LocalInitialContextFactory;

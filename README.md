@@ -16,11 +16,17 @@ Primer 02: Serijalizacija pomoću Protocol Buffers
 
 Primer 03: Java serijalizacija
 
-## Bean scope, dependency injection
+## Bean scope
 
 Primer 01: EJB komponente: stateless, stateful, singleton
 
 Primer 02: Spring komponente i scope
+
+Primer 03: EJB bean lifecycle
+
+Primer 04: Spring bean life cycle
+
+## Dependency injection
 
 ## Aspekt-orijentisano programiranje
 
