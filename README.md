@@ -18,6 +18,10 @@ Primer 03: Java serijalizacija
 
 ## Bean scope, dependency injection
 
+Primer 01: EJB komponente: stateless, stateful, singleton
+
+Primer 02: Spring komponente i scope
+
 ## Aspekt-orijentisano programiranje
 
 ## Resource pooling

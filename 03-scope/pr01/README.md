@@ -1,4 +1,4 @@
-# Primer pozivanja stateful i stateless EJB komponenti
+# Primer pozivanja stateful, stateless i singleton EJB komponenti
 
 ## Potrebne stvari
 
@@ -6,7 +6,8 @@
 
 ## Priprema primera
 
-Ako se koristi neko od razvojnih okruženja, projekat se može pripremiti za njih pomoću komande
+Ako se koristi neko od razvojnih okruženja, projekat se može pripremiti za
+njih pomoću komande
 
 `gradle eclipse`
 

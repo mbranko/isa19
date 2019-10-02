@@ -15,10 +15,13 @@ public class Server {
 
   public static void main(String[] args) throws Exception {
     final Properties properties = new Properties();
-    properties.setProperty(Context.INITIAL_CONTEXT_FACTORY, LocalInitialContextFactory.class.getName());
+    properties.setProperty(Context.INITIAL_CONTEXT_FACTORY, 
+        LocalInitialContextFactory.class.getName());
     properties.setProperty("openejb.embedded.remotable", "true");
     properties.setProperty("ejbd.port", "4201");
     properties.setProperty("ejbd.disabled", "false");
+    properties.setProperty("openejb.jmx.active", "false");
+    // properties.setProperty("openejb.jndiname.format", "{deploymentId}");
     final EJBContainer container = EJBContainer.createEJBContainer(properties);
     final CountDownLatch latch = new CountDownLatch(10);
 
