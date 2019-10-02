@@ -1,6 +1,5 @@
 package pr01;
 
-import org.apache.openejb.OpenEjbContainer;
 import org.apache.openejb.core.LocalInitialContextFactory;
 
 import javax.ejb.embeddable.EJBContainer;
