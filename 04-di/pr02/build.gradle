@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+task server(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'pr02.Server'
+    }
+    baseName = 'Server'
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+task client(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'pr02.Client'
+    }
+    baseName = 'Client'
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+task alljars(dependsOn: [server, client]) { }
+
+dependencies {
+    compile group: 'org.apache.openejb', name: 'openejb-core', version: '4.7.5'
+    compile group: 'org.apache.openejb', name: 'openejb-server', version: '4.7.5'
+    compile group: 'org.apache.openejb', name: 'openejb-client', version: '4.7.5'
+    compile group: 'org.apache.openejb', name: 'openejb-ejbd', version: '4.7.5'
+}
