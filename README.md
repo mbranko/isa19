@@ -16,7 +16,7 @@ Primer 02: Serijalizacija pomoću Protocol Buffers
 
 Primer 03: Java serijalizacija
 
-## Bean scope
+## Inverzija kontrole i opseg vidljivosti komponenti
 
 Primer 01: EJB komponente: stateless, stateful, singleton
 
