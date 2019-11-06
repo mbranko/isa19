@@ -46,7 +46,19 @@ Primer 01: JDBC API
 
 Primer 02: Pristup relacionoj bazi iz servleta
 
+Primer 03: Ispravan connection pool i servleti
+
+Primer 04: EJB stateless session bean pooling
+
 ## O/R mapiranje
+
+Primer 01: Ručno snimanje objekata u relacionu bazu
+
+Primer 02: Primer klasa koje umeju da se "same" snime u bazu
+
+Primer 03: Upotreba anotacija za automatizovanu perzistenciju
+
+Primer 04: Mapiranje veza između klasa
 
 ## Arhitekture web aplikacija
 

@@ -1,0 +1,29 @@
+group 'pr02'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+mainClassName = 'pr02.Test'
+
+jar {
+    manifest {
+        attributes 'Main-Class': "$mainClassName"
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+dependencies {
+    compile group: 'com.h2database', name: 'h2', version: '1.4.196'
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.5'
+}
+
