@@ -28,9 +28,23 @@ Primer 04: Spring bean life cycle
 
 ## Dependency injection
 
+Primer 01: Google Guice
+
+Primer 02: EJB
+
+Primer 03: Spring
+
 ## Aspekt-orijentisano programiranje
 
+Primer 01: EJB
+
+Primer 02: Spring
+
 ## Resource pooling
+
+Primer 01: JDBC API
+
+Primer 02: Pristup relacionoj bazi iz servleta
 
 ## O/R mapiranje
 

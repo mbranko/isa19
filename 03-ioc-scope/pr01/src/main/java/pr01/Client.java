@@ -17,14 +17,21 @@ public class Client {
     // pozovi stateless bean
     System.out.println("==== STATELESS ====");
     Hello hello = (Hello) ctx.lookup("java:global/Server/HelloBean!pr01.Hello");
+    
+    // poziv se desava ovde
     String response = hello.hello("Branko");
+
     System.out.println("Response: " + response);
 
     // pozovi stateful bean 10 puta
     System.out.println("==== STATEFUL ====");
     Count c = (Count)ctx.lookup("java:global/Server/CountBean!pr01.Count");
     for (int i = 0; i < 10; i++) {
-      System.out.println("count: " + c.count());
+
+      // poziv se desava ovde
+      int count = c.count();
+
+      System.out.println("count: " + count);
       Thread.sleep(100);
     }
 
@@ -33,7 +40,11 @@ public class Client {
     SingletonCount sc = (SingletonCount)ctx.lookup(
       "java:global/Server/SingletonCountBean!pr01.SingletonCount");
     for (int i = 0; i < 10; i++) {
-      System.out.println("count: " + sc.count());
+
+      // poziv se desava ovde
+      int count = sc.count();
+
+      System.out.println("count: " + count);
       Thread.sleep(100);
     }
   }

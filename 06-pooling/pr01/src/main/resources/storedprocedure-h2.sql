@@ -1,0 +1,1 @@
+CREATE ALIAS povezi FOR "pr01.DbDemo.povezi";

@@ -1,0 +1,31 @@
+group 'pr03'
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'org.akhikhl.gretty:gretty:+'
+  }
+}
+
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+repositories {
+  jcenter()
+}
+
+gretty {
+  // supported values:
+  // 'jetty7', 'jetty8', 'jetty9', 'jetty93', 'jetty94', 'tomcat7', 'tomcat8'
+  servletContainer = 'jetty9'
+}
+
+dependencies {
+    compile group: 'com.h2database', name: 'h2', version: '1.4.196'
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.5'
+}
