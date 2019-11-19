@@ -1,5 +1,7 @@
 package pr04;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import java.util.Properties;
@@ -7,6 +9,7 @@ import java.util.Properties;
 public class Client {
 
   public static void main(String[] args) throws Exception {
+    Logger.getLogger("").setLevel(Level.OFF);
     Properties properties = new Properties();
     properties.setProperty(Context.INITIAL_CONTEXT_FACTORY,
         "org.apache.openejb.client.RemoteInitialContextFactory");

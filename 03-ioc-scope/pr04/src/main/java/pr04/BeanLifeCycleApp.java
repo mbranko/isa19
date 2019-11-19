@@ -1,5 +1,7 @@
 package pr04;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.boot.Banner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -10,6 +12,7 @@ import pr04.beans.SingletonBean;
 @SpringBootApplication
 public class BeanLifeCycleApp {
   public static void main(String[] args) {
+    Logger.getLogger("").setLevel(Level.OFF);    
     ConfigurableApplicationContext ctx = new SpringApplicationBuilder()
         .sources(BeanLifeCycleApp.class)
         .bannerMode(Banner.Mode.OFF)

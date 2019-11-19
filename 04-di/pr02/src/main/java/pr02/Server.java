@@ -1,7 +1,8 @@
 package pr02;
 
 import org.apache.openejb.core.LocalInitialContextFactory;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
 import java.util.Properties;
@@ -13,6 +14,7 @@ public class Server {
   }
 
   public static void main(String[] args) throws Exception {
+    Logger.getLogger("").setLevel(Level.OFF);
     final Properties properties = new Properties();
     properties.setProperty(Context.INITIAL_CONTEXT_FACTORY, 
         LocalInitialContextFactory.class.getName());

@@ -3,7 +3,8 @@ package pr01;
 import pr01.model.CreditCard;
 import pr01.model.Order;
 import pr01.purchase.Purchase;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.Properties;
 public class Client {
 
   public static void main(String[] args) throws Exception {
+    Logger.getLogger("").setLevel(Level.OFF);
     Properties properties = new Properties();
     properties.setProperty(Context.INITIAL_CONTEXT_FACTORY,
         "org.apache.openejb.client.RemoteInitialContextFactory");

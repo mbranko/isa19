@@ -1,5 +1,7 @@
 package pr01;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import java.util.Properties;
@@ -13,6 +15,7 @@ public class Client {
     properties.setProperty(Context.PROVIDER_URL,
         "ejbd://localhost:4201");
     InitialContext ctx = new InitialContext(properties);
+    Logger.getLogger("").setLevel(Level.OFF);
 
     // pozovi stateless bean
     System.out.println("==== STATELESS ====");
