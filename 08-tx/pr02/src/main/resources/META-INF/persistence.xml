@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+  <persistence-unit name="Bank" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>pr02.optimistic.BankAccount</class>
+    <class>pr02.pessimistic.BankAccount</class>
+    <properties>
+      <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+      <property name="hibernate.connection.url" value="jdbc:h2:mem:test;LOCK_TIMEOUT=10000"/>
+      <property name="hibernate.connection.username" value="sa"/>
+      <property name="hibernate.connection.password" value=""/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.sql-load-script-source" value="data.sql"/>
+    </properties>
+  </persistence-unit>
+</persistence>
