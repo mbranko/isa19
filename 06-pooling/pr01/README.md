@@ -34,7 +34,7 @@ Iz osnovnog foldera pokrenuti
 
 pa zatim pokrenuti
 
-`java -jar build/libs/pr14.jar`
+`java -jar build/libs/pr01.jar`
 
 ili pokrenuti klasu `pr01.Server` iz razvojnog okruženja.
 
