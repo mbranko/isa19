@@ -1,0 +1,12 @@
+[
+  {
+    "categoryId": 1,
+    "name": "Računari"
+  }, {
+    "categoryId": 2,
+    "name": "Bela tehnika"
+  }, {
+    "categoryId": 3,
+    "name": "Baštenska oprema"  
+  }
+]

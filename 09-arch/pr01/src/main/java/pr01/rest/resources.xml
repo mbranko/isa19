@@ -1,0 +1,11 @@
+<tomee>
+	<Resource id="WebShop" type="javax.sql.DataSource">
+	  JdbcDriver com.mysql.jdbc.Driver
+	  JdbcUrl jdbc:mysql://localhost/isa
+	  UserName isa
+	  Password isa
+	  JtaManaged false
+	  DefaultAutoCommit false 
+	</Resource>
+	<Service id="json" class-name="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+</tomee>

@@ -1,0 +1,28 @@
+<mat-card *ngIf="product">
+  <mat-card-title>{{ product.name }}</mat-card-title>
+  <mat-card-subtitle><app-breadcrumb [product]="product"></app-breadcrumb></mat-card-subtitle>
+  
+  <mat-card-content>
+    <div class="table">
+      <div class="row">
+        <div class="cell">Proizvođač:</div>
+        <div class="cell">{{ product.vendor }}</div>
+      </div>
+      <div class="row">
+        <div class="cell">Cena:</div>
+        <div class="cell">{{ product.price }}</div>
+      </div>
+      <div class="row">
+        <div class="cell">Dobavljač:</div>
+        <div class="cell">{{ product.supplier.name }}</div>
+      </div>
+      <div class="row">
+        <div class="cell">Opis:</div>
+        <div class="cell">{{ product.description }}</div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button md-button (click)="buy(product)">KUPI</button>
+  </mat-card-actions>
+</mat-card>

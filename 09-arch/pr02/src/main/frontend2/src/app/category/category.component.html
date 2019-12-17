@@ -1,0 +1,16 @@
+<mat-card *ngIf="category">
+  <mat-card-title>{{ category.name }}</mat-card-title>
+  <mat-card-subtitle><app-breadcrumb [category]="category"></app-breadcrumb></mat-card-subtitle>
+  
+  <mat-nav-list>
+    <h3 md-subheader>Potkategorije</h3>
+    <mat-list-item *ngFor="let cat of category.children" (click)="onSelectCategory(cat)">
+      {{ cat.name }}
+    </mat-list-item>
+    <h3 md-subheader>Proizvodi</h3>
+    <mat-list-item *ngFor="let prod of category.products" (click)="onSelectProduct(prod)">
+      {{ prod.name }}
+    </mat-list-item>
+  </mat-nav-list>
+
+</mat-card>

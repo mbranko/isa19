@@ -1,0 +1,45 @@
+<mat-card >
+  <div [hidden]="formStatus!='entry'">
+    <mat-card-title>Podaci za plaćanje</mat-card-title>
+    <form #cardForm="ngForm">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Broj kartice" name="number" required [(ngModel)]="card.number" #name="ngModel"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Ime i prezime" name="holderName" required [(ngModel)]="card.holderName" #name="ngModel"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Mesec isteka" name="expiryMonth" type="number" min="01" max="12" required  [(ngModel)]="card.expiryMonth" #name="ngModel"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Godina isteka" name="expiryYear" type="number" min="17" max="99" required  [(ngModel)]="card.expiryYear" #name="ngModel"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="CVC" name="cvc" type="number" min="100" max="999" required  [(ngModel)]="card.cvc" #name="ngModel"/>
+        </mat-form-field>
+      </div>
+    </form>
+    <mat-card-actions>
+      <button mat-button (click)="submit()" [disabled]="!cardForm.form.valid">PLATI</button>
+    </mat-card-actions>
+  </div>
+  <div [hidden]="formStatus!='sending'">
+    <mat-card-title>Šaljem zahtev za plaćanje...</mat-card-title>
+  </div>
+  <div [hidden]="formStatus!='success'">
+    <mat-card-title>Plaćanje uspešno :)</mat-card-title>
+  </div>
+  <div [hidden]="formStatus!='fail'">
+    <mat-card-title>Plaćanje neuspešno :(</mat-card-title>
+  </div>
+</mat-card>
+

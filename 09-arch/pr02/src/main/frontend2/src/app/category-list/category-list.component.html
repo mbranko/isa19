@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-card-title>Osnovne kategorije</mat-card-title>
+  <mat-card-subtitle>One koje nemaju roditelja</mat-card-subtitle>
+  <mat-nav-list>
+    <a md-list-item *ngFor="let category of rootCategories | async" (click)="onSelect(category)">{{category.name}}</a>
+  </mat-nav-list>
+</mat-card>

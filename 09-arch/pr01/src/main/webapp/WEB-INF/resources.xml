@@ -1,0 +1,19 @@
+<tomee>
+    <Resource id="WebShopDS" type="javax.sql.DataSource">
+        JdbcDriver org.h2.Driver
+        JdbcUrl jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+        UserName sa
+        Password
+        JtaManaged false
+        DefaultAutoCommit false
+    </Resource>
+    <Resource id="WebShopDSJta" type="javax.sql.DataSource">
+        JdbcDriver org.h2.Driver
+        JdbcUrl jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+        UserName sa
+        Password
+        JtaManaged true
+        DefaultAutoCommit false
+    </Resource>
+    <Service id="json" class-name="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+</tomee>

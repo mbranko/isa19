@@ -1,0 +1,8 @@
+<h2 md-dialog-title>{{ data.product.name }}</h2>
+<mat-dialog-content>
+  <label for="quantity">Količina:</label> <input id="quantity" #quantity/>
+</mat-dialog-content>
+<mat-dialog-actions [attr.align]="right">
+  <button md-button (click)="dialogRef.close(quantity.value)">POTVRDI</button>
+  <button md-button md-dialog-close>ODUSTANI</button>
+</mat-dialog-actions>

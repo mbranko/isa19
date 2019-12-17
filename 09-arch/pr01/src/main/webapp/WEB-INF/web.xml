@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+    id="pr01" 
+    version="3.0">
+  <display-name>primer 22</display-name>
+
+  <filter>
+    <description>Filter koji redirektuje neulogovane korisnike na login.jsp stranicu</description>
+    <display-name>Authorization Filter</display-name>
+    <filter-name>AuthorizationFilter</filter-name>
+    <filter-class>pr01.servlet.AuthorizationFilter</filter-class>
+    <init-param>
+      <param-name>login-page</param-name>
+      <param-value>/login.jsp</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthorizationFilter</filter-name>
+    <url-pattern>*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>pr01.servlet.LoginServlet</servlet-class>
+    <init-param>
+      <param-name>failure-page</param-name>
+      <param-value>/login.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>success-page</param-name>
+      <param-value>/index.jsp</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>PickCategoryServlet</servlet-name>
+    <servlet-class>pr01.servlet.PickCategoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PickProductServlet</servlet-name>
+    <servlet-class>pr01.servlet.PickProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <servlet-class>pr01.servlet.AddToCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PaymentServlet</servlet-name>
+    <servlet-class>pr01.servlet.PaymentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PickCategoryServlet</servlet-name>
+    <url-pattern>/cat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PickProductServlet</servlet-name>
+    <url-pattern>/prod</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PaymentServlet</servlet-name>
+    <url-pattern>/pay</url-pattern>
+  </servlet-mapping>
+</web-app>

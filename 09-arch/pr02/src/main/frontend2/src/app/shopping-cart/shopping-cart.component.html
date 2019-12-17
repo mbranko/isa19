@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Vaša korpa</mat-card-title>
+  <mat-card-content>
+    <div class="table" *ngIf="shoppingCart">
+      <div class="header">
+        <div class="cell">Proizvod</div>
+        <div class="cell">Količina</div>
+        <div class="cell">Cena</div>
+      </div>
+      <div class="row" *ngFor="let item of shoppingCart.items">
+        <div class="cell">{{ item.product.name }}</div>
+        <div class="cell right">{{ item.quantity }}</div>
+        <div class="cell right">{{ item.product.price }}</div>
+      </div>
+      <div class="footer">
+        <div class="cell">UKUPNO</div>
+        <div class="cell"></div>
+        <div class="cell right">{{ getTotal() }}</div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions *ngIf="shoppingCart">
+    <button md-button routerLink="/payment">PLAĆANJE</button>
+    <button md-button (click)="clear()">ISPRAZNI</button>
+  </mat-card-actions>
+
+</mat-card>

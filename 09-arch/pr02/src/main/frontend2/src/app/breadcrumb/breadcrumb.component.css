@@ -1,0 +1,7 @@
+span.breadcrumb {
+  font-weight: bold;
+}
+
+span.breadcrumb a {
+  text-decoration: none;
+}

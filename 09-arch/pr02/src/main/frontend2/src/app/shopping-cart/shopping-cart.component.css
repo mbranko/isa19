@@ -1,0 +1,32 @@
+.table {
+    display:table;
+    border-collapse: collapse;
+}
+.header {
+    display:table-header-group;
+    font-weight:bold;
+    background: #3f51b5;
+    color: white;
+}
+.footer {
+    display:table-footer-group;
+    font-weight:bold;
+    border-top: thin solid black;
+}
+.rowGroup {
+    display:table-row-group;
+}
+.row {
+    display:table-row;
+}
+.row:nth-child(odd) {
+    background: #eee;  
+}
+.cell {
+    display:table-cell;
+    padding: 5px;
+}
+
+.right {
+  text-align: right;
+}

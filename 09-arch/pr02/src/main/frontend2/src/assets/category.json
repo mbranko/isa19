@@ -1,0 +1,13 @@
+{
+  "id": 4,
+  "name": "Laptop",
+  "parent": 1,
+  "children": [],
+  "products": [
+  {
+    "name": "ThinkPad X1"
+  }, {
+    "name": "MacBook Pro 15"
+  }
+  ]
+}

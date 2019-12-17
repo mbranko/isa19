@@ -1,0 +1,30 @@
+<mat-sidenav-container [class.m2app-dark]="isDarkTheme">
+
+
+  <mat-sidenav #sidenav mode="side" class="app-sidenav">
+    Sidenav
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+
+    <a class="title" routerLink="/">Web Shop</a>
+
+    <span class="app-toolbar-filler"></span>
+    <button md-button routerLink="/cart">Korpa</button>
+  </mat-toolbar>
+
+  <div class="app-content">
+
+    <router-outlet></router-outlet>
+
+  </div>
+</mat-sidenav-container>
+
+<!--
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>
+-->
