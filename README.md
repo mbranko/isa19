@@ -8,6 +8,8 @@ Primer 01: Minimalan višenitni web server - Java
 
 Primer 02: Minimalan jednonitni web server - Node.js
 
+Skript za uporedno analiziranje performansi servera
+
 ## Serijalizacija objekata
 
 Primer 01: Serijalizacija pomoću JSON
