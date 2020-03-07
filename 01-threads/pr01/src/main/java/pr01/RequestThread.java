@@ -18,10 +18,18 @@ class RequestThread extends Thread {
 
   private String method;
 
+  private String url;
+
   private boolean success;
+
+  private int requestCount;
 
   public void setSocket(Socket s) {
     this.socket = s;
+  }
+
+  public void setRequestCount(int requestCount) {
+    this.requestCount = requestCount;
   }
 
   public void run() {
@@ -44,12 +52,21 @@ class RequestThread extends Thread {
 
   private void parsirajZahtev() throws IOException {
     String line1 = in.readLine();
-    String[] parts = line1.split(" ");
-    method = parts[0];
+    if (line1 == null) {
+      method = "NONE";
+    } else {
+      String[] parts = line1.split(" ");
+      method = parts[0];
+      url = parts[1];
+    }
   }
 
   private void obradiZahtev() {
     success = "GET".equals(method.toUpperCase());
+    if (requestCount % 7 == 0)
+      try { Thread.sleep(250); } catch (InterruptedException ex) {}
+    if (requestCount % 11 == 0)
+      try { Thread.sleep(450); } catch (InterruptedException ex) {}
   }
 
   private void posaljiOdgovor() throws IOException {

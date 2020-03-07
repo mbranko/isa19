@@ -16,12 +16,12 @@ class Server {
   public static void main(String[] args) {
     try {
       ServerSocket ss = new ServerSocket(SERVER_PORT);
-      logger.info("Listening for HTTP clients on " + SERVER_PORT);
+      int requestCount = 0;
       while (true) {
         Socket s = ss.accept();
-        logger.info("Client accepted: " + s.getInetAddress().toString());
         RequestThread t = new RequestThread();
         t.setSocket(s);
+        t.setRequestCount(++requestCount);
         t.start();
       }
     } catch (IOException ex) {
