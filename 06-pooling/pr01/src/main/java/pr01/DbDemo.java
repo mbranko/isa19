@@ -18,11 +18,14 @@ public class DbDemo {
     Class.forName("org.h2.Driver");
 
     // otvaranje konekcije sa bazom
+    // "jdbc:mysql://localhost:3306/naziv_seme"
+    // java.sql.Connection
     connection = DriverManager.getConnection("jdbc:h2:mem:test", "sa", "");
 
     createSchema();
     insertData();
     select();
+    insert();
     preparedStatement();
     callableStatement();
     System.out.println("===");
@@ -72,6 +75,17 @@ public class DbDemo {
   }
 
   /**
+   * Primer dodavanja jednog reda u tabelu.
+   */
+  private static void insert() throws Exception {
+    String dml = "INSERT INTO NASTAVNICI (nastavnik_id, ime, prezime, zvanje)" + 
+                 " VALUES (4, 'Zika', 'Zikic', 'docent')";    
+    Statement stmt = connection.createStatement();
+    int rowsAffected = stmt.executeUpdate(dml);
+    stmt.close();
+  }
+
+  /**
    * Primer slanja vise uzastopnih INSERT naredbi u bazu
    * pomocu PreparedStatement
    */
@@ -80,13 +94,13 @@ public class DbDemo {
     PreparedStatement stmt = connection.prepareStatement(
         "INSERT INTO nastavnici (nastavnik_id, ime, prezime, zvanje) " +
             "VALUES (?, ?, ?, ?)");
-    stmt.setInt(1, 4);
+    stmt.setInt(1, 5);
     stmt.setString(2, "Sima");
     stmt.setString(3, "Simic");
     stmt.setString(4, "docent");
     stmt.executeUpdate();
 
-    stmt.setInt(1, 5);
+    stmt.setInt(1, 6);
     stmt.setString(2, "Vasa");
     stmt.setString(3, "Vasic");
     stmt.setString(4, "docent");
@@ -100,7 +114,7 @@ public class DbDemo {
    */
   private static void callableStatement() throws Exception {
     CallableStatement stmt = connection.prepareCall(
-        "{call povezi (?, ?, ?)}");
+        "{? = call povezi (?, ?, ?)}");
     stmt.setString(1, "Sima");
     stmt.setString(2, "Simic");
     stmt.setString(3, "Osnovi racunarstva");

@@ -24,7 +24,7 @@ public class PessimisticTest {
         BankAccount account = em.find(BankAccount.class, 1,
             LockModeType.PESSIMISTIC_WRITE);
 
-        // cekaj 10 sekundi
+        // cekaj 3 sekunde
         System.out.println("[Thread 1] Cekam 3 sekunde...");
         try { Thread.sleep(3000); } catch (InterruptedException e) { }
 
