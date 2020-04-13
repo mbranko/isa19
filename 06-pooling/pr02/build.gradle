@@ -6,26 +6,37 @@ buildscript {
   }
 
   dependencies {
-    classpath 'org.akhikhl.gretty:gretty:+'
+  //   classpath 'org.akhikhl.gretty:gretty:+'
+    classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
   }
 }
 
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'war'
-apply plugin: 'org.akhikhl.gretty'
+// apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+apply plugin: 'com.bmuschko.tomcat'
 
 repositories {
-  jcenter()
+  mavenCentral()
 }
 
-gretty {
-  // supported values:
-  // 'jetty7', 'jetty8', 'jetty9', 'jetty93', 'jetty94', 'tomcat7', 'tomcat8'
-  servletContainer = 'jetty9'
-}
+// gretty {
+//   // supported values:
+//   // 'jetty7', 'jetty8', 'jetty9', 'jetty93', 'jetty94', 'tomcat7', 'tomcat8'
+//   servletContainer = 'jetty9'
+// }
 
 dependencies {
     compile group: 'com.h2database', name: 'h2', version: '1.4.196'
     compile group: 'org.mybatis', name: 'mybatis', version: '3.4.5'
+    def tomcatVersion = '9.0.17'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:9.0.0.M6",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+tomcat {
+    httpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
+    ajpProtocol  = 'org.apache.coyote.ajp.AjpNio2Protocol'
 }

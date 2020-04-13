@@ -15,6 +15,7 @@ Primer kompletne web aplikacije koja se sastoji iz sledećih delova:
 
 ## Potrebne stvari
 
+* JDK 1.8
 * [Gradle](https://gradle.org)
 
 ## Priprema primera
