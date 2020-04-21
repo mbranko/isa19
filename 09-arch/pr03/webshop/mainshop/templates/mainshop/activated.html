@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account activation</title>
+</head>
+<body>
+  <h3>Account activation</h3>
+    {% if success %}
+      <p>Your account has been activated successfully.</p>
+      <p>Click <a href="/">here</a> to start using the site.</p>
+    {% else %}
+      <p>Your account has NOT been activated successfully.</p>
+      <p>Please check the email sent by the system.</p>
+    {% endif %}
+</body>
+</html>
