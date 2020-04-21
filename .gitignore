@@ -27,3 +27,6 @@ gradle/
 .settings/
 build/
 .vscode/
+.idea/
+db.sqlite3
+webshop.log
