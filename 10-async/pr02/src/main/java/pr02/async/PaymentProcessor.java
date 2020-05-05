@@ -1,9 +1,9 @@
-package pr29.async;
+package pr02.async;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;
-import pr29.message.PaymentInfo;
+import pr02.message.PaymentInfo;
 
 import java.util.concurrent.Future;
 

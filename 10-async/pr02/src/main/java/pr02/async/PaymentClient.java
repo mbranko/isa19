@@ -1,9 +1,9 @@
-package pr29.async;
+package pr02.async;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pr29.message.CardType;
-import pr29.message.PaymentInfo;
+import pr02.message.CardType;
+import pr02.message.PaymentInfo;
 
 import java.math.BigDecimal;
 import java.util.concurrent.Future;

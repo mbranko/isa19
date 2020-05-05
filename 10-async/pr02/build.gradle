@@ -1,4 +1,4 @@
-group 'pr29'
+group 'pr02'
 
 buildscript {
 	ext {
@@ -24,7 +24,7 @@ repositories {
 	jcenter()
 }
 
-mainClassName = 'pr29.AsyncApp'
+mainClassName = 'pr02.AsyncApp'
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')

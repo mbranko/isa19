@@ -1,11 +1,11 @@
-package pr29;
+package pr02;
 
 import org.springframework.boot.Banner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
-import pr29.async.PaymentClient;
+import pr02.async.PaymentClient;
 
 @SpringBootApplication
 @EnableAsync

@@ -1,4 +1,4 @@
-package pr29.message;
+package pr02.message;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
