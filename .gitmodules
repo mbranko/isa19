@@ -1,3 +1,9 @@
 [submodule "09-arch/pr03"]
 	path = 09-arch/pr03
 	url = https://github.com/mbranko/webshop.git
+[submodule "11-perf/perftest-1"]
+	path = 11-perf/perftest-1
+	url = http://github.com/mbranko/perftest-1
+[submodule "11-perf/perftest-2"]
+	path = 11-perf/perftest-2
+	url = http://github.com/mbranko/perftest-2
