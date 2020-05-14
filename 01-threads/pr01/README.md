@@ -44,7 +44,7 @@ zahteva na isti URL.
 Klasa `pr01.Server` je ulazna tačka programa gde se zauzima port 8080 i u beskonačnoj petlji čeka na otvaranje TCP 
 konekcije. Za svaku otvorenu konekciju pokreće se posebna nit za obradu zahteva. 
 
-Klasa `ThreadZaObraduZahteva` predstavlja nit za obradu zahteva. Analizira se samo prvi red HTTP zahteva, odnosno samo 
+Klasa `RequestThread` predstavlja nit za obradu zahteva. Analizira se samo prvi red HTTP zahteva, odnosno samo 
 HTTP metoda u okviru prvog reda. Ako je u pitanju `GET` metoda, vraća se odgovor sa statusom `200` i pozdravnom HTML 
 stranicom a u suprotnom šalje se odgovor sa statusom `405` (*Method not allowed*).
 
