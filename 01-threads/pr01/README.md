@@ -18,7 +18,7 @@ Ako se koristi neko od razvojnih okruženja, projekat se može pripremiti za nji
 
 `gradle eclipse`
 
-ili 
+ili
 
 `gradle idea`
 
@@ -36,18 +36,19 @@ pa zatim pokrenuti
 
 ili pokrenuti klasu `pr01.Server` iz razvojnog okruženja.
 
-Potom u browseru ili Postmanu poslati GET zahtev na adresu `http://localhost:8080`. Nakon toga isprobati i slanje POST 
+Potom u browseru ili Postmanu poslati GET zahtev na adresu `http://localhost:8080`. Nakon toga isprobati i slanje POST
 zahteva na isti URL.
 
 ## Sadržaj primera
 
-Klasa `pr01.Server` je ulazna tačka programa gde se zauzima port 8080 i u beskonačnoj petlji čeka na otvaranje TCP 
-konekcije. Za svaku otvorenu konekciju pokreće se posebna nit za obradu zahteva. 
+Klasa `pr01.Server` je ulazna tačka programa gde se zauzima port 8080 i u beskonačnoj petlji čeka na otvaranje TCP
+konekcije. Za svaku otvorenu konekciju pokreće se posebna nit za obradu zahteva.
 
-Klasa `RequestThread` predstavlja nit za obradu zahteva. Analizira se samo prvi red HTTP zahteva, odnosno samo 
-HTTP metoda u okviru prvog reda. Ako je u pitanju `GET` metoda, vraća se odgovor sa statusom `200` i pozdravnom HTML 
+Klasa `RequestThread` predstavlja nit za obradu zahteva. Analizira se samo prvi red HTTP zahteva, odnosno samo
+HTTP metoda u okviru prvog reda. Ako je u pitanju `GET` metoda, vraća se odgovor sa statusom `200` i pozdravnom HTML
 stranicom a u suprotnom šalje se odgovor sa statusom `405` (*Method not allowed*).
 
 ## HTTP statusi
 
-Pregledna i čitka lista HTTP status kodova nalazi se na https://httpstatuses.com 
+Pregledna i čitka lista HTTP status kodova nalazi se na https://httpstatuses.com
+

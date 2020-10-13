@@ -17,7 +17,7 @@ Iz osnovnog foldera pokrenuti
 `node server.js`
 
 Potom u browseru ili Postmanu poslati GET zahtev na adresu
-`http://localhost:8080`. Nakon toga isprobati i slanje POST zahteva na isti
+`http://localhost:9090`. Nakon toga isprobati i slanje POST zahteva na isti
 URL.
 
 ## Sadržaj primera
@@ -34,4 +34,4 @@ ostalim slučajevima vraća se odgovor 405 (*Method not allowed*).
 ## HTTP statusi
 
 Pregledna i čitka lista HTTP status kodova nalazi se na
-https://httpstatuses.com 
+https://httpstatuses.com
