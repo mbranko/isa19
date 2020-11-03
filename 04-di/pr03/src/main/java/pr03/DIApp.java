@@ -16,6 +16,7 @@ public class DIApp {
   public static void main(String[] args) {
     ConfigurableApplicationContext ctx = new SpringApplicationBuilder()
         .sources(DIApp.class)
+        .bannerMode(Banner.Mode.OFF)
         .run(args);
 
     PurchaseBean pb = ctx.getBean(PurchaseBean.class);
