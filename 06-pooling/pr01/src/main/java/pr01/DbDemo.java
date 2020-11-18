@@ -78,8 +78,8 @@ public class DbDemo {
    * Primer dodavanja jednog reda u tabelu.
    */
   private static void insert() throws Exception {
-    String dml = "INSERT INTO NASTAVNICI (nastavnik_id, ime, prezime, zvanje)" + 
-                 " VALUES (4, 'Zika', 'Zikic', 'docent')";    
+    String dml = "INSERT INTO NASTAVNICI (nastavnik_id, ime, prezime, zvanje)" +
+                 " VALUES (4, 'Zika', 'Zikic', 'docent')";
     Statement stmt = connection.createStatement();
     int rowsAffected = stmt.executeUpdate(dml);
     stmt.close();
@@ -114,7 +114,7 @@ public class DbDemo {
    */
   private static void callableStatement() throws Exception {
     CallableStatement stmt = connection.prepareCall(
-        "{? = call povezi (?, ?, ?)}");
+        "{call povezi (?, ?, ?)}");
     stmt.setString(1, "Sima");
     stmt.setString(2, "Simic");
     stmt.setString(3, "Osnovi racunarstva");
