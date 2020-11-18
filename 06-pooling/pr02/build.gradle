@@ -28,6 +28,7 @@ repositories {
 // }
 
 dependencies {
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
     compile group: 'com.h2database', name: 'h2', version: '1.4.196'
     compile group: 'org.mybatis', name: 'mybatis', version: '3.4.5'
     def tomcatVersion = '9.0.17'

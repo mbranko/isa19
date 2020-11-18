@@ -18,7 +18,7 @@ Ako se koristi neko od razvojnih okruženja, projekat se može pripremiti za nji
 
 `gradle eclipse`
 
-ili 
+ili
 
 `gradle idea`
 
@@ -28,7 +28,7 @@ Nakon toga se projekat može otvoriti u izabranom alatu i podešavanja za projek
 
 Iz osnovnog foldera pokrenuti
 
-`gradle appRunWar`
+`gradle tomcatRunWar`
 
 pa zatim otvoriti browser na adresi (GET zahtev): http://localhost:8080/pr02/list
 
