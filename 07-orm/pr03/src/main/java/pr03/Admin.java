@@ -15,12 +15,12 @@ public class Admin implements Serializable {
 
   @Id                                 // atribut je deo primarnog kljuca
   @GeneratedValue(strategy=IDENTITY)  // vrednost se generise automatski, u bazi
-  @Column(name="admin_id", unique=true,  nullable=false) 
+  @Column(name="admin_id", unique=true,  nullable=false)
   private Integer id;
-  
-  @Column(name="username", unique=false, nullable=false)
+
+  @Column(name="username", unique=true, nullable=false)
   private String username;
-  
+
   @Column(name="pasword", unique=false, nullable=false)
   private String password;
 
@@ -53,7 +53,7 @@ public class Admin implements Serializable {
   public void setPassword(String password) {
     this.password = password;
   }
-  
+
   public String toString() {
     return "(Admin)[id="+id+",username="+username+",password="+password+"]";
   }
