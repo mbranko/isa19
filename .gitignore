@@ -30,3 +30,4 @@ build/
 .idea/
 db.sqlite3
 webshop.log
+.env
