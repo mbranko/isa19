@@ -14,6 +14,7 @@ class Server {
   private static final Logger logger = LoggerFactory.getLogger(Server.class);
 
   public static void main(String[] args) {
+    System.out.println("Starting server...");
     try {
       ServerSocket ss = new ServerSocket(SERVER_PORT);
       int requestCount = 0;

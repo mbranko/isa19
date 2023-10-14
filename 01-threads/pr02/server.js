@@ -1,5 +1,6 @@
-let requestCount = 0;
 const http = require('http');
+let requestCount = 0;
+console.log('Starting server...');
 http.createServer(function (req, res) {
     if (req.method == 'GET') {
       const html = `<!DOCTYPE html><html><head></head><body><h1>Success</h1><p>Test page</p></body></html>\n`;

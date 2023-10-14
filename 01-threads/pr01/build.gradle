@@ -1,4 +1,4 @@
-group 'isa17pr01'
+group 'isa19pr01'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -15,14 +15,14 @@ mainClassName = 'pr01.Server'
 
 jar {
     manifest {
-        attributes 'Main-Class': "$mainClassName"
+        attributes 'Main-Class': 'pr01.Server'
     }
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
 
 dependencies {
-    compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
+    implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.29'
 }
 
