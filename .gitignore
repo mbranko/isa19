@@ -31,3 +31,4 @@ build/
 db.sqlite3
 webshop.log
 .env
+target/

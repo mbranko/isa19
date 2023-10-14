@@ -1,0 +1,17 @@
+type Invoice {
+    id: ID!
+    client: Client!
+    status: String!
+    issuedDate: String
+    currency: String!
+    gross: Float!
+    net: Float!
+    vat: Float!
+}
+
+extend type Query {
+    invoices: [Invoice]
+    invoice(id: Int!): Invoice
+    invoicesByStatus(status: String): [Invoice]
+    invoiceCount: Int!
+}

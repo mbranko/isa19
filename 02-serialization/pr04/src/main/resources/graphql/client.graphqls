@@ -1,0 +1,14 @@
+type Client {
+    id: ID!
+    name: String!
+    paymentTerms: Int!
+    addressLine1: String!
+    addressLine2: String
+    city: String!
+    postCode: String!
+}
+
+type Query {
+    clients: [Client]!
+    clientCount: Int!
+}
