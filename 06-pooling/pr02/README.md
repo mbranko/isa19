@@ -28,7 +28,7 @@ Nakon toga se projekat može otvoriti u izabranom alatu i podešavanja za projek
 
 Iz osnovnog foldera pokrenuti
 
-`gradle tomcatRunWar`
+`gradle appRun`
 
 pa zatim otvoriti browser na adresi (GET zahtev): http://localhost:8080/pr02/list
 

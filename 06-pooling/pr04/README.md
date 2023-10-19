@@ -22,6 +22,8 @@ projekat će već biti inicijalizovana.
 
 ## Bildovanje primera
 
+Obavezno koristiti Java 1.8!
+
 `gradle alljars`
 
 ## Pokretanje primera

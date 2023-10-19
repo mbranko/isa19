@@ -24,7 +24,7 @@ Nakon toga se projekat može otvoriti u izabranom alatu i podešavanja za projek
 
 Iz osnovnog foldera pokrenuti
 
-`gradle appRunWar`
+`gradle appRun`
 
 pa zatim otvoriti browser na adresi (GET zahtev): http://localhost:8080/pr03/list
 

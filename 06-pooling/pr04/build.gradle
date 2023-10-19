@@ -1,34 +1,35 @@
 group 'pr04'
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
 apply plugin: 'application'
 
-sourceCompatibility = 1.8
-
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
 task server(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
         attributes 'Main-Class': 'pr04.Server'
     }
-    baseName = 'Server'
+    archiveBaseName = 'Server'
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
     with jar
 }
 
 task client(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
         attributes 'Main-Class': 'pr04.Client'
     }
-    baseName = 'Client'
+    archiveBaseName = 'Client'
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
     with jar
 }
@@ -36,8 +37,8 @@ task client(type: Jar) {
 task alljars(dependsOn: [server, client]) { }
 
 dependencies {
-    compile group: 'org.apache.openejb', name: 'openejb-core', version: '4.7.5'
-    compile group: 'org.apache.openejb', name: 'openejb-server', version: '4.7.5'
-    compile group: 'org.apache.openejb', name: 'openejb-client', version: '4.7.5'
-    compile group: 'org.apache.openejb', name: 'openejb-ejbd', version: '4.7.5'
+    implementation group: 'org.apache.openejb', name: 'openejb-core', version: '4.7.5'
+    implementation group: 'org.apache.openejb', name: 'openejb-server', version: '4.7.5'
+    implementation group: 'org.apache.openejb', name: 'openejb-client', version: '4.7.5'
+    implementation group: 'org.apache.openejb', name: 'openejb-ejbd', version: '4.7.5'
 }

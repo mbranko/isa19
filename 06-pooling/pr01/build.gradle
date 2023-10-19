@@ -18,13 +18,13 @@ jar {
         attributes 'Main-Class': "$mainClassName"
     }
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
 
 dependencies {
-    compile group: 'com.h2database', name: 'h2', version: '1.4.196'
-    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.5'
-    compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.196'
+    implementation group: 'org.mybatis', name: 'mybatis', version: '3.4.5'
+    implementation group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
 }
 
