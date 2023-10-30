@@ -34,7 +34,7 @@ Za pokretanje primera potrebna je MySQL ili MariaDB baza podataka sa
 sledećom šemom i korisnikom:
 
 ```sql
-CREATE DATABASE txtest CHARACTER SET utf8;
+CREATE DATABASE txtest CHARACTER SET utf8mb4;
 CREATE USER 'txtest'@'localhost' IDENTIFIED BY 'txtest';
 GRANT ALL PRIVILEGES ON txtest.* to 'txtest'@'localhost';
 FLUSH PRIVILEGES;

@@ -20,12 +20,12 @@ public class Demo {
 
   protected static void setup(String script, int isolationLevel) throws Exception {
     Class.forName("com.mysql.cj.jdbc.Driver");
-    conn1 = DriverManager.getConnection("jdbc:mysql://localhost/txtest", "txtest", "txtest");
+    conn1 = DriverManager.getConnection("jdbc:mysql://localhost/txtest?serverTimezone=UTC", "txtest", "txtest");
     conn1.setAutoCommit(false);
     runScript(script, conn1);
     conn1.commit();
     conn1.setTransactionIsolation(isolationLevel);
-    conn2 = DriverManager.getConnection("jdbc:mysql://localhost/txtest", "txtest", "txtest");
+    conn2 = DriverManager.getConnection("jdbc:mysql://localhost/txtest?serverTimezone=UTC", "txtest", "txtest");
     conn2.setAutoCommit(false);
     conn2.setTransactionIsolation(isolationLevel);
   }
