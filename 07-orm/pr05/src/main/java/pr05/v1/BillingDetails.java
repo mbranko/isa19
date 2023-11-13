@@ -1,7 +1,7 @@
 package pr05.v1;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 
 // ova klasa nije entity (ne mapira se na tabelu u bazi) ali njeni propertiji
 // ce biti nasledjeni u entity klasama - otuda je potrebna ova anotacija

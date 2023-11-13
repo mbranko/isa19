@@ -7,10 +7,10 @@ import pr06.surrogate.PrimerIdentity;
 import pr06.surrogate.PrimerSequence;
 import pr06.surrogate.PrimerTable;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.Query;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

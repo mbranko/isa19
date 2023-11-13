@@ -1,12 +1,12 @@
 package pr05.v2;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 // ovde je dovoljno navesti da je klasa entity, sve se nasledjuje 
 // iz BillingDetails
-@Entity
+@Entity(name="CreditCard2")
 @Table(name="v2_creditcard")
 public class CreditCard extends BillingDetails {
 

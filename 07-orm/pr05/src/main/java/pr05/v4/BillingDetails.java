@@ -1,15 +1,15 @@
 package pr05.v4;
 
-import static javax.persistence.InheritanceType.JOINED;
+import static jakarta.persistence.InheritanceType.JOINED;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.Table;
 
-@Entity
+@Entity(name="BillingDetails4")
 @Table(name="v4_billingdetails")
 // ovom anotacijom se naglasava mapiranje tipa "jedna tabela po svakoj klasi"
 @Inheritance(strategy=JOINED)

@@ -1,10 +1,10 @@
 package pr05.v3;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 
-@Entity
+@Entity(name="CreditCard3")
 // ovom anotacijom se navodi vrednost diskriminatorske kolone koja vazi za 
 // objekte ove klase
 @DiscriminatorValue("CC")

@@ -1,14 +1,14 @@
 package pr05.v2;
 
-import static javax.persistence.InheritanceType.TABLE_PER_CLASS;
+import static jakarta.persistence.InheritanceType.TABLE_PER_CLASS;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
 
-@Entity
+@Entity(name="BillingDetails2")
 // ovom anotacijom se naglasava da je ova klasa koren hijerarhije koja koristi
 // koncept jedna tabela po konkretnoj klasi
 @Inheritance(strategy=TABLE_PER_CLASS)

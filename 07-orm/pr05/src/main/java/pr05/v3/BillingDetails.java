@@ -1,17 +1,17 @@
 package pr05.v3;
 
-import static javax.persistence.DiscriminatorType.STRING;
-import static javax.persistence.InheritanceType.SINGLE_TABLE;
+import static jakarta.persistence.DiscriminatorType.STRING;
+import static jakarta.persistence.InheritanceType.SINGLE_TABLE;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.Table;
 
-@Entity
+@Entity(name="BillingDetails3")
 @Table(name="v3_billingdetails")
 // ovom anotacijom se naglasava tip mapiranja "jedna tabela po hijerarhiji"
 @Inheritance(strategy=SINGLE_TABLE)
