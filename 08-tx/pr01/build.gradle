@@ -14,18 +14,19 @@ repositories {
 mainClassName = 'pr01.Test'
 
 jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
         attributes 'Main-Class': "$mainClassName"
     }
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
 
 dependencies {
-    compile group: 'org.apache.openejb', name: 'openejb-core', version: '4.7.5'
-    compile group: 'org.apache.openejb', name: 'openejb-server', version: '4.7.5'
-    compile group: 'org.apache.openejb', name: 'openejb-client', version: '4.7.5'
-    compile group: 'org.apache.openejb', name: 'openejb-ejbd', version: '4.7.5'
+    implementation group: 'org.apache.openejb', name: 'openejb-core', version: '4.7.5'
+    implementation group: 'org.apache.openejb', name: 'openejb-server', version: '4.7.5'
+    implementation group: 'org.apache.openejb', name: 'openejb-client', version: '4.7.5'
+    implementation group: 'org.apache.openejb', name: 'openejb-ejbd', version: '4.7.5'
 }
 

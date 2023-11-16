@@ -3,8 +3,8 @@ package pr02;
 import pr02.optimistic.OptimisticTest;
 import pr02.pessimistic.PessimisticTest;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
