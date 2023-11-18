@@ -14,15 +14,15 @@ jar {
         attributes 'Main-Class': "$mainClassName"
     }
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
 
 dependencies {
-    compile group: 'org.apache.tomee', name: 'tomee-embedded', version: '7.0.4'
-    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.12.Final'
-    compile group: 'com.h2database', name: 'h2', version: '1.4.196'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.2'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.2'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.2'
+    implementation group: 'org.apache.tomee', name: 'tomee-embedded', version: '7.0.4'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.2.12.Final'
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.196'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.2'
 }
